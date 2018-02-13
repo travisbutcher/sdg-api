@@ -35,7 +35,7 @@ exports.get = function (query, cb) {
       opts.query_ids = utils.string_to_int(query.ids);
       data = alasql('SELECT * FROM $data WHERE goal IN @($query_ids)', opts);
     } else {
-      data = alasql('SELECT * FROM $data', opts); 
+      data = alasql('SELECT * FROM $data', opts);
     }
 
     if (query.targets === 'true' || query.indicators === 'true') {

@@ -32,6 +32,7 @@ app.listen(port, function () {
 
   TARGETS = JSON.parse( fs.readFileSync('data/targets-final.json') );
   INDICATORS = JSON.parse( fs.readFileSync('data/indicators-final.json') );
+  SERIES = JSON.parse( fs.readFileSync('data/series-final.json') );
    
   console.log('ready!');
 });

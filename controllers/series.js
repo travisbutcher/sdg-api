@@ -10,17 +10,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.​ */
-
+ 
 var express = require('express'),
-  router = express.Router();
+    router = express.Router(),
+    series = require('../models/series');
 
 router.get('/', function (req, res) {
-  res.json( { 'meta' : 'info about the api goes here' } );
+  series.get(req.query, function (err, response) {
+    res.json( response );
+  });
 });
-
-router.use('/goals', require('./goals'));
-router.use('/targets', require('./targets'));
-router.use('/indicators', require('./indicators'));
-router.use('/series', require('./series'));
 
 module.exports = router;
